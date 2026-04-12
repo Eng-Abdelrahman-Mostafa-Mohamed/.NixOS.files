@@ -1,0 +1,10 @@
+.vscode/
+.devenv*
+devenv.local.nix
+devenv.local.yaml
+.direnv
+.pre-commit-config.yaml
+.yamllint.yaml
+.yamlfmt.yaml
+statix.toml
+opencode.jsonc

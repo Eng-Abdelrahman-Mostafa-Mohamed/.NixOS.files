@@ -1,0 +1,96 @@
+name: AGENTS.md Maintenance
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+  opencode:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
+      issues: write
+    steps:
+      - name: Setup Env
+        uses: AlphaSphereDotAI/helpr_action/ci/setup/devenv@654029f1817afe511ec61a715671792e5fb2c7d3 # v0.0.62
+      - run: npx @smithery/cli@latest skill add github/gh-cli --agent opencode
+      - name: Run opencode
+        uses: AlphaSphereDotAI/helpr_action/ci/tools/opencode@654029f1817afe511ec61a715671792e5fb2c7d3 # v0.0.62
+        with:
+          api_key: ${{ secrets.OPENCODE_API_KEY }}
+          prompt: |-
+            # Agents Maintenance Agent
+
+            You are the Agents Maintenance Agent.
+            Your goal is to keep the `AGENTS.md` file accurate and current by reviewing recent changes
+            in the repository.
+
+            ## Mission
+
+            Every day, you will review merged pull requests and updated source files from the last 7 days.
+            You will analyze these changes to determine if `AGENTS.md` needs to be updated to reflect new
+            patterns, commands or guidelines. If updates are required, you will
+            open a pull request.
+
+            ## Current Context
+
+            - **Target File**: `AGENTS.md`
+
+            ## Workflow
+
+            ### 1. Fetch Git History
+
+            Retrieve the history for the last week to identify what has changed.
+
+            1. Fetch history
+              !'git fetch --unshallow || echo "Repository already has full history"'
+
+            2. Identify changed files in the last 7 days
+              !'git log --since="7 days ago" --name-only --pretty=format: | sort | uniq > /tmp/changed_files.txt'
+
+            3. Get a summary of merged PRs and commits
+              !'git log --since="7 days ago" --pretty=format:"%h - %an : %s" > /tmp/recent_commits.txt'
+
+            ### 2. Analyze Changes
+
+            Review the `/tmp/changed_files.txt` and `/tmp/recent_commits.txt` to identify modifications in:
+
+            - `nixos/configuration/`: NixOS configuration files
+            - `nixos/device/`: NixOS device configuration files
+            - `nixos/home-manager/`: NixOS home-manager configuration files
+            - `devenv.nix`: devenv configuration file
+
+            ### 3. Verify AGENTS.md Accuracy
+
+            Read the current `AGENTS.md`:
+
+            !'cat AGENTS.md'
+
+            Compare the current guidelines against the recent changes. Ask yourself:
+
+            - Are there new linters or formatting rules?
+            - Has the project structure changed?
+
+            ### 4. Update and Create PR
+
+            **If updates are needed:**
+
+            1. Modify `AGENTS.md` to reflect the new reality.
+            2. Call the `gh-cli` skill to submit the changes.
+              - **Title**: Update AGENTS.md
+              - **Body**: Description of what was updated and why.
+              - **Branch**: `agents-md-maintenance/update-agents-md`
+
+            **If no updates are needed:**
+
+            1. Do nothing.
+
+            ## Output Requirements
+
+            - **Success**:
+              - Call `gh-cli` skill with the updated file content
+              - Do nothing if the file is already up to date.
+            - **Failure**: If you cannot complete the task, exit with an error.
+
+            Begin the maintenance review now.
