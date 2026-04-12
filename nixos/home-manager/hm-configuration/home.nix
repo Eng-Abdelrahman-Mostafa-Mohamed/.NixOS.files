@@ -7,7 +7,7 @@
 }:
 {
   # Wayland, X, etc. support for session vars
-  # systemd.user.sessionVariables = config.home-manager.users.mohamed.home.sessionVariables;
+  # systemd.user.sessionVariables = config.home-manager.users.abdelrahman.home.sessionVariables;
 
   home = {
     pointerCursor = {
@@ -147,8 +147,8 @@
     file.".oh-my-bash".source = inputs.oh-my-bash;
     # Home Manager needs a bit of information about you and the
     # paths it should manage.
-    username = "mohamed";
-    homeDirectory = "/home/mohamed";
+    username = "abdelrahman";
+    homeDirectory = "/home/abdelrahman";
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
     # when a new Home Manager release introduces backwards

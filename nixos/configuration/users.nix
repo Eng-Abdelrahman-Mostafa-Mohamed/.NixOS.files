@@ -1,10 +1,10 @@
 { pkgs, ... }:
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.mohamed = {
+  users.users.abdelrahman = {
     shell = pkgs.zsh;
     isNormalUser = true;
-    description = "Mohamed Hisham";
+    description = "abdelrahman";
     extraGroups = [
       "adbusers"
       "docker"

@@ -25,7 +25,7 @@ _: {
     # coolercontrol.enable = true;
     nh = {
       enable = true;
-      flake = "/home/mohamed/.dotfiles";
+      flake = "/home/abdelrahman/.dotfiles";
       clean = {
         enable = true;
         extraArgs = "--keep 5";

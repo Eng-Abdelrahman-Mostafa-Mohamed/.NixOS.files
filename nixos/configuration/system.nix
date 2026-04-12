@@ -29,7 +29,7 @@
       ];
       trusted-users = [
         "root"
-        "mohamed"
+        "abdelrahman"
       ];
     };
   };

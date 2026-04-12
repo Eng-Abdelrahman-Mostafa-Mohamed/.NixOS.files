@@ -36,7 +36,7 @@ _: {
       compositor.name = "niri"; # Or "hyprland" or "sway"
 
       # Sync your user's DankMaterialShell theme with the greeter. You'll probably want this
-      configHome = "/home/mohamed";
+      configHome = "/home/abdelrahman";
 
       # Save the logs to a file
       logs = {

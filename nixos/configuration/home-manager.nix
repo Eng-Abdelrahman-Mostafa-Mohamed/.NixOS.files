@@ -19,7 +19,7 @@ in
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.mohamed = import ./../home-manager/hm-configuration.nix;
+    users.abdelrahman = import ./../home-manager/hm-configuration.nix;
     extraSpecialArgs = {
       inherit inputs;
       inherit nur;

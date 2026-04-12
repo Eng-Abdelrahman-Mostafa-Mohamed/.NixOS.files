@@ -9,7 +9,7 @@
   ```nix
   programs.nh = {
     enable = true;
-    flake = "/home/mohamed/.dotfiles";
+    flake = "/home/abdelrahman/.dotfiles";
     clean = {
         enable = true;
         extraArgs = "--keep 5";
@@ -20,7 +20,7 @@
     "nix-command"
   ];
   # Make sure to change the hostname
-  networking.hostName = "MohamedLaptopNixOS"; # or "MohamedDesktopNixOS";
+  networking.hostName = "abdelrahman"; # or "abdelrahmanDesktopNixOS";
   ```
 
 - Switch to the new configuration:

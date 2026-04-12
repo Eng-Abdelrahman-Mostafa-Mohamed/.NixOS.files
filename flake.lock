@@ -340,6 +340,22 @@
         "type": "github"
       }
     },
+    "oh-my-bash": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1772378585,
+        "narHash": "sha256-JaDZWYRuTG10MQPfZfayIuXSLS6ZfyMuYPj3rJFqpo4=",
+        "owner": "ohmybash",
+        "repo": "oh-my-bash",
+        "rev": "05e6d038524c516f7aadfb4f3e3f732c0629f4fd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ohmybash",
+        "repo": "oh-my-bash",
+        "type": "github"
+      }
+    },
     "portainer-on-nixos": {
       "inputs": {
         "nixpkgs": [
@@ -417,6 +433,7 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable_2",
         "nur": "nur",
+        "oh-my-bash": "oh-my-bash",
         "portainer-on-nixos": "portainer-on-nixos",
         "zen-browser": "zen-browser"
       }

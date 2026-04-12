@@ -1,5 +1,5 @@
 {
-  description = "MH0386's NixOS Configuration";
+  description = "Abdelrahman's NixOS Configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -79,8 +79,7 @@
         config.allowUnfree = true;
       };
       hostNames = [
-        "MohamedDesktopNixOS"
-        "MohamedLaptopNixOS"
+        "Abdelrahman-nixos"
       ];
       commonModules = [
         home-manager.nixosModules.home-manager

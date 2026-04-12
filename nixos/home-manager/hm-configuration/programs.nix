@@ -38,8 +38,8 @@
       package = pkgsStable.git;
       settings = {
         user = {
-          name = "Mohamed Hisham Abdelzaher";
-          email = "mohamed.hisham.abdelzaher@gmail.com";
+          name = "abdelrahman Hisham Abdelzaher";
+          email = "abdelrahman.hisham.abdelzaher@gmail.com";
         };
         pull.rebase = false;
         init.defaultBranch = "main";
